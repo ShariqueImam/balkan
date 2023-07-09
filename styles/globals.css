@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Futura LT";
+  src: url("../assets/Futura/FuturaLT-Light.ttf");
+  src: url("../assets/Futura/FuturaLT-Oblique.ttf");
+  src: url("../assets/Futura/FuturaLT-Bold.ttf");
+  src: url("../assets/Futura/FuturaLT.ttf");
+  font-weight: 700;
+}
+.is-momentumScrollable {
+  -webkit-overflow-scrolling: touch;
+}
+.is-scrollLocked {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.font {
+  font-family: "Futura LT", serif;
+  font-weight: 700;
+}
+.border-move-animation::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: width 0.3s;
+}
+
+.border-move-animation:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.homeBg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.45)),
+    url("/homebg2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: auto;
+  width: 100vw;
+  height: 90vh;
+}
+.leaderboardBg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("/bg1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: auto;
+  width: 100vw;
+  height: 70vh;
+}
+.applyBg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/apply.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: auto;
+  width: 100vw;
+  height: 100vh;
+}
