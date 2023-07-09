@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BsSpeedometer2 } from "react-icons/bs";
-import Link from "next/link";
+import Link from 'next/link';
 import NavDrawer from "./NavDrawer";
 import { useRouter } from "next/router";
 import Image from "next/image";

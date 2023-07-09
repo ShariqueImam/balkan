@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import Link from "next/Link";
+import Link from 'next/link';
 import Animator from "../../components/UI/Animator";
 import Cookies from "js-cookie";
 import { AiOutlineArrowRight } from "react-icons/ai";

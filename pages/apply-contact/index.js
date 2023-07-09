@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Link from "next/Link";
+import Link from 'next/link';
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { BsCheck2 } from "react-icons/bs";
 import { useRouter } from "next/router";

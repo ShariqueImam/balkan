@@ -13,12 +13,12 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <HttpsRedirect>
+    // <HttpsRedirect>
       <div className="overflow-x-hidden font">
         {HandleCookie && <CookieComp accept={accept} reject={reject} />}
         <Component {...pageProps} />
       </div>
-    </HttpsRedirect>
+    // </HttpsRedirect>
   );
 }
 
