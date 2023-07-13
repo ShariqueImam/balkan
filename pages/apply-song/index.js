@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Link from 'next/link';
+import Link from "next/link";
 import Animator from "../../components/UI/Animator";
 import Cookies from "js-cookie";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { BsCheck2 } from "react-icons/bs";
 import { useRouter } from "next/router";
 import axios from "axios";
-
+import emailjs from '@emailjs/browser';
 const index = () => {
   const { locale, locales, push } = useRouter();
   const [value, setvalue] = useState("");
@@ -75,16 +75,23 @@ const index = () => {
     const sendEmail = (e) => {
       let dataToBeSentToEmail = {
         createdAt: new Date().toISOString(),
-        name: Name,
-        email: Email,
-        message: Message,
+        applyRally: Cookies.get("applyRally"),
+        applyName: Cookies.get("applyName"),
+        applyDob: Cookies.get("applyDob"),
+        applyAddress: Cookies.get("applyAddress"),
+        applyContact: Cookies.get("applyContact"),
+        applyEmail: Cookies.get("applyEmail"),
+        applyRallyCar: Cookies.get("applyRallyCar"),
+        applyWhy: Cookies.get("applyWhy"),
+        applyCoDriver: Cookies.get("applyCoDriver"),
+        applySong: Cookies.get("applySong"),
       };
       emailjs
         .send(
-          "service_75tlo9a",
-          "template_h6l2e4k",
+          "service_cvdqvck",
+          "template_4qtgk86",
           dataToBeSentToEmail,
-          "6BIY51JblL2XGIZJ8"
+          "s3F_nmkQms6iEV-Sz"
         )
         .then(
           function (response) {
@@ -95,8 +102,8 @@ const index = () => {
           }
         );
     };
-    sendData();
-    // sendEmail();
+    // sendData();
+    sendEmail();
   };
   return (
     <Animator>
