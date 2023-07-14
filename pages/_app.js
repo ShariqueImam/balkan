@@ -4,7 +4,7 @@ import HttpsRedirect from "react-https-redirect";
 import { appWithTranslation } from "next-i18next";
 import CookieComp from "../components/Main/CookieComp/CookieComp";
 function MyApp({ Component, pageProps }) {
-  const [HandleCookie, setHandleCookie] = useState(true);
+  const [HandleCookie, setHandleCookie] = useState(false);
   const accept = () => {
     setHandleCookie(false);
   };

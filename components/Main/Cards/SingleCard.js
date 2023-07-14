@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import useWindowSize from "../../../hooks/useWindowSize";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 import { AiOutlineArrowRight } from "react-icons/ai";
 const style = {
   wrapper:
@@ -15,7 +15,7 @@ const style = {
     "bg-red text-white flex items-center justify-center  px-5 md:px-8 py-2 md:py-3  mt-7 hover:opacity-[0.85] transition duration-[300ms]",
   btnText: " flex items-center justify-center",
 };
-const SingleCard = ({ line, heading, image, link, btn }) => {
+const SingleCard = ({ line, heading, image, btn }) => {
   const { width } = useWindowSize();
   const FeaturedBackground1 = styled.a`
     background: radial-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -27,15 +27,18 @@ const SingleCard = ({ line, heading, image, link, btn }) => {
     background-position: center;
     background-attachment: auto;
   `;
+  const { locale } = useRouter();
   return (
-    <FeaturedBackground1 className={style.wrapper} href={link}>
+    <FeaturedBackground1 className={style.wrapper}>
       <h2 className={style.heading}>{heading}</h2>
       <section>
         <p className={style.para}>{line}</p>
-        <Link href={'/apply'}>
+        <Link href={"/apply"}>
           {btn && (
             <button className={style.button}>
-              <p className={style.btnText}>APPLY</p>
+              <p className={style.btnText}>
+                {locale == "en" ? "Apply" : "Приложи"}
+              </p>
               <AiOutlineArrowRight className="font-semibold ml-5 text-white" />
             </button>
           )}
