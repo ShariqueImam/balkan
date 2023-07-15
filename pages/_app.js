@@ -4,7 +4,7 @@ import HttpsRedirect from "react-https-redirect";
 import { appWithTranslation } from "next-i18next";
 import CookieComp from "../components/Main/CookieComp/CookieComp";
 function MyApp({ Component, pageProps }) {
-  const [HandleCookie, setHandleCookie] = useState(false);
+  const [HandleCookie, setHandleCookie] = useState(true);
   const accept = () => {
     setHandleCookie(false);
   };
@@ -13,12 +13,12 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    // <HttpsRedirect>
+    <HttpsRedirect>
       <div className="overflow-x-hidden font">
         {HandleCookie && <CookieComp accept={accept} reject={reject} />}
         <Component {...pageProps} />
       </div>
-    // </HttpsRedirect>
+    </HttpsRedirect>
   );
 }
 
