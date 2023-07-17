@@ -102,7 +102,7 @@ const index = () => {
           }
         );
     };
-    // sendData();
+    sendData();
     sendEmail();
   };
   return (
